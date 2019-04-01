@@ -16,11 +16,13 @@
 
     #removeSpaces{
       padding:10px;
+      font-size: 30px;
     }
   </style>
 </head>
 <body>
   <div id="content" contenteditable></div>
+  <br>
   <br>
   <button id="removeSpaces" type="button">Убрать пробелы</button>
   <script type="text/javascript">
@@ -32,6 +34,7 @@
       var regexp = /\s{1,}([\,||\.||\!||\?])/g;
 
       rs.addEventListener('click', function(){
+
           content.textContent = content.textContent.replace(regexp,function(){
             return regexp.exec(content.textContent)[1];
           })
