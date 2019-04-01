@@ -50,10 +50,18 @@
       var content = document.getElementById("content");
       var rs = document.getElementById("removeSpaces");
       var regexp = /\s{1,}([\,||\.||\!||\?])/g;
+      var regexpAp = /\'(.{1,})\'/g;
+      var regexpApTwo = /\"(.{1,})\"/g;
 
       rs.addEventListener('click', function(){
 
-          content.textContent = content.textContent.replace(regexp,function(){
+          content.textContent = content.textContent.replace(regexpAp,function(){
+            return "'"+regexpAp.exec(content.textContent)[1].trim()+"'";
+          })
+          .replace(regexpApTwo,function(){
+            return '"'+regexpApTwo.exec(content.textContent)[1].trim()+'"';
+          })
+          .replace(regexp,function(){
             return regexp.exec(content.textContent)[1];
           })
           .replace(/\s{2,}/g, " ");
