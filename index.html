@@ -29,10 +29,13 @@
 
       var content = document.getElementById("content");
       var rs = document.getElementById("removeSpaces");
+      var regexp = /\s{1,}([\,||\.||\!||\?])/g;
 
       rs.addEventListener('click', function(){
-          
-          content.textContent = content.textContent.replace(/\s{1,}\,/g, "\," ).replace(/\s{1,}\./g, "\." ).replace(/\s{1,}\!/g, "\!" ).replace(/\s{1,}\?/g, "\?" ).replace(/\s{2,}/g, " " );
+          content.textContent = content.textContent.replace(regexp,function(){
+            return regexp.exec(content.textContent)[1];
+          })
+          .replace(/\s{2,}/g, " ");
 
       }); 
 
