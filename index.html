@@ -62,7 +62,9 @@
           let cs = document.createElement('span')
           cs.textContent = "Скопировано в буфер обмена";
           document.body.appendChild(cs);
-          setInterval(function(){document.querySelector('span').remove()}, 1500)
+          var interval = setTimeout(function(){document.querySelector('span').remove();clearTimeout(interval);}, 1500);
+          
+
       }); 
 
     });
