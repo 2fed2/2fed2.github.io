@@ -26,6 +26,18 @@
   <br>
   <button id="removeSpaces" type="button">Убрать пробелы</button>
   <script type="text/javascript">
+    function copy(str){
+            let tmp   = document.createElement('INPUT'),
+                focus = document.activeElement;
+
+            tmp.value = str; 
+            document.body.appendChild(tmp); 
+
+            tmp.select();
+            document.execCommand('copy'); 
+            document.body.removeChild(tmp); 
+            focus.focus();
+          }
 
     window.addEventListener('load', function(){
 
@@ -39,7 +51,12 @@
             return regexp.exec(content.textContent)[1];
           })
           .replace(/\s{2,}/g, " ");
+          copy(content.textContent);
 
+          let cs = document.createElement('span')
+          cs.textContent = "Скопировано в буфер обмена";
+          document.body.appendChild(cs);
+          setInterval(function(){document.querySelector('span').remove()}, 1500)
       }); 
 
     });
