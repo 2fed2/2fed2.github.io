@@ -59,6 +59,12 @@
           .replace(/\s{2,}/g, " ");
           copy(content.textContent);
 
+          if(document.querySelector('span'))
+            document.querySelector('span').remove();
+          
+          if(interval)
+            clearTimeout(interval);
+
           let cs = document.createElement('span')
           cs.textContent = "Скопировано в буфер обмена";
           document.body.appendChild(cs);
