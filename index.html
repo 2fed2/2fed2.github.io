@@ -50,8 +50,8 @@
       var content = document.getElementById("content");
       var rs = document.getElementById("removeSpaces");
       var regexp = /\s{1,}([\,||\.||\!||\?])/g;
-      var regexpAp = /\'(.{1,})\'/g;
-      var regexpApTwo = /\"(.{1,})\"/g;
+      var regexpAp = /\'([^\']{1,})\'/g;
+      var regexpApTwo = /\"([^\"]{1,})\"/g;
 
       rs.addEventListener('click', function(){
 
