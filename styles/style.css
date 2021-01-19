@@ -471,6 +471,8 @@ input[type=radio] {
 @media screen and (max-width: 767px) {
   .settings__content {
     margin-bottom: 16px;
+    padding-right: 0;
+    width: 100%;
   }
 }
 .settings__form {
