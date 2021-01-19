@@ -381,10 +381,10 @@ input[type=radio] {
 .links__item:last-child {
   margin-bottom: 0;
 }
-.links__item:focus {
+.links__item.active {
   color: #4D1BC1;
 }
-.links__item:focus:before {
+.links__item.active:before {
   content: "";
   width: 2px;
   height: 20px;
