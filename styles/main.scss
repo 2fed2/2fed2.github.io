@@ -1,0 +1,16 @@
+.main{
+  padding-top: 35px;
+  flex-grow: 1;
+  @media screen and (max-width: $mdScreen) {
+    padding-top: 0;
+  }
+  &__title{
+    margin-bottom: 43px;
+    @media screen and (max-width: $mdScreen) {
+      margin-bottom: 40px;
+    }
+  }
+  &__breadcrumbs{
+    margin-bottom: 8px;
+  }
+}

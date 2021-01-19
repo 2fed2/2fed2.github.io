@@ -1,0 +1,14 @@
+.container{
+  max-width: 1280px;
+  padding: 0 40px 80px;
+  margin: 0 auto;
+  &--content{
+    display: flex;
+    @media screen and (max-width: $mdScreen) {
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width: $mdScreen) {
+    padding: 0 16px 80px;
+  }
+}

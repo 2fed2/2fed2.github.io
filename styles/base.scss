@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
+a {
+  font-weight: 700;
+  text-decoration: none;
+  color: $mainTextColor;
+  transition: $mainTransiton;
+  &:hover {
+    color: $secondaryTextColor;
+  }
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: $bodyBgColor;
+  margin: 0;
+  color: $secondaryTextColor;
+}
+
+h1, h2{
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: $mainTextColor;
+}
+
+h2{
+  font-size: 20px;
+}
+
+p{
+  margin: 0;
+}
+
+input[type=radio]{
+  display: none;
+}

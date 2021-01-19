@@ -1,0 +1,63 @@
+/* colors */
+$bodyBgColor: #E5E5E5;
+$mainBgColor: #FFFFFF;
+$btnBgAccentColor: #4D1BC1;
+
+$mainTextColor: #1C1E20;
+$secondaryTextColor: #818181;
+$accentTextColor: #4D1BC1;
+$accentTextColorBtn: #FFFFFF;
+
+$mainBorderColor: #C7C7C7;
+
+/* border */
+
+$mainBorder: 1px solid #C7C7C7;
+$accentBorder: 1px solid #4D1BC1;
+$radioBorder: 2px solid #C7C7C7;
+
+/* media */
+
+$mdScreen: 767px;
+$smScreen: 360px;
+
+/* animation */
+
+$mainTransiton: 0.3s all;
+
+
+/* icons */
+
+@mixin burgerLine {
+  position: absolute;
+  height: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  background: $mainTextColor;
+  border-radius: 1px;
+}
+
+@mixin closeLine {
+  position: absolute;
+  height: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  background: $mainBgColor;
+  border-radius: 1px;
+}
+
+@mixin arrowLine {
+  position: absolute;
+  height: 2px;
+  width: 11px;
+  background: $mainTextColor;
+  border-radius: 1px;
+}
+
+/* reset */
+
+@mixin resetUl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

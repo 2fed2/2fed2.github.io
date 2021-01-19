@@ -1,0 +1,14 @@
+.header {
+  background-color: $mainBgColor;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: $mainBorder;
+  &__nav{
+    margin-left: auto;
+  }
+  @media screen and (max-width: $mdScreen) {
+    padding: 10px 26px 10px 16px;
+  }
+}

@@ -1,90 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Редактор текста</title>
-  <style>
-    #content{
-      display: block;
-      width: 100%;
-      height: 50vh;
-      border: 3px solid black;
-      overflow: auto;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    #removeSpaces{
-      padding:10px;
-      font-size: 30px;
-    }
-    span{
-     font-size: 30px;
-     display: inline-block;
-     padding:10px;
-     background-color: lightgreen; 
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Document</title>
 </head>
 <body>
-  <div id="content" contenteditable></div>
-  <br>
-  <br>
-  <button id="removeSpaces" type="button">Убрать пробелы</button>
-  <script type="text/javascript">
-    function copy(str){
-            let tmp   = document.createElement('INPUT'),
-                focus = document.activeElement;
-
-            tmp.value = str; 
-            document.body.appendChild(tmp); 
-
-            tmp.select();
-            document.execCommand('copy'); 
-            document.body.removeChild(tmp); 
-            focus.focus();
-          }
-
-    window.addEventListener('load', function(){
-      var content = document.getElementById("content");
-      var rs = document.getElementById("removeSpaces");
-      var regexpLeft = /\s{1,}([\,||\.||\!||\?||\<])/g;
-      var regexpRight = /(\>)\s{1,}/g;
-      var regexpAp = /\'([^\']{1,})\'/g;
-      var regexpApTwo = /\"([^\"]{1,})\"/g;
-
-      rs.addEventListener('click', function(){
-          content.textContent = content.textContent.replace(regexpAp,function(){
-            return "'"+regexpAp.exec(content.textContent)[1].trim()+"'";
-          })
-          .replace(regexpApTwo,function(){
-            return '"'+regexpApTwo.exec(content.textContent)[1].trim()+'"';
-          })
-          .replace(regexpRight,function(){
-            return regexpRight.exec(content.textContent)[1];
-          })
-          .replace(regexpLeft,function(){
-            return regexpLeft.exec(content.textContent)[1];
-          })
-          .replace(/\s{2,}/g, " ");
-          copy(content.textContent);
-
-          if(document.querySelector('span'))
-            document.querySelector('span').remove();
-          
-          if(interval)
-            clearTimeout(interval);
-
-          let cs = document.createElement('span')
-          cs.textContent = "Скопировано в буфер обмена";
-          document.body.appendChild(cs);
-          var interval = setTimeout(function(){document.querySelector('span').remove();clearTimeout(interval);}, 1500);
-          
-
-      }); 
-
-    });
-    
-  </script>
+<header class="header">
+    <a href="#" class="logo">
+        lite.page
+    </a>
+    <nav class="nav header__nav js-nav">
+        <button class="nav__button icon__burger js-nav-btn">
+            <span></span>
+        </button>
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="#">CRM</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Мои сайты</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Каталог</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Тарифы</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Блог</a>
+            </li>
+            <li class="nav__item nav__item--help">
+                <a href="#">Помощь</a>
+            </li>
+            <li class="nav__item nav__item--user">
+                <div class="user">
+                    <a href="#" class="user__avatar">
+                        <img src="img/avatar.JPG" alt="avatar">
+                    </a>
+                    <div class="user__info">
+                        <a href="#" class="user__name">Артем Городецкий</a>
+                        <a href="#" class="user__exit">Выйти</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+<section class="container container--content">
+    <aside class="sidebar">
+        <a href="#" class="sidebar__back">
+            <span class="icon__back"></span>
+            Назад
+        </a>
+        <div class="substrate sidebar__links links">
+            <a href="#" class="links__item">Доступ к сайту</a>
+            <a href="#" class="links__item">Доступ к сайту</a>
+            <a href="#" class="links__item">Доступ к сайту</a>
+            <a href="#" class="links__item">Доступ к сайту</a>
+            <a href="#" class="links__item">Доступ к сайту</a>
+            <a href="#" class="links__item">Доступ к сайту</a>
+            <a href="#" class="links__item">Доступ к сайту</a>
+            <a href="#" class="links__item">Доступ к сайту</a>
+            <a href="#" class="links__item">Доступ к сайту</a>
+            <a href="#" class="links__item">Доступ к сайту</a>
+            <a href="#" class="links__item">Доступ к сайту</a>
+            <a href="#" class="links__item">Доступ к сайту</a>
+        </div>
+    </aside>
+    <main class="main">
+        <ul class="breadcrumbs main__breadcrumbs">
+            <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">Настройка сайта</a>
+            </li>
+            <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">Доступ к сайту</a>
+            </li>
+        </ul>
+        <h1 class="main__title">
+            Доступ к сайту
+        </h1>
+        <div class="substrate settings">
+            <h2 class="settings__title">
+                Настройка доступа к сайту
+            </h2>
+            <p class="settings__hint">
+                Контролируйте, кому доступен ваш сайт
+            </p>
+            <div class="settings__body">
+                <p class="settings__content">
+                    Интернет сайт
+                </p>
+                <form action="#" class="settings__form form">
+                    <div class="form__group radio">
+                        <input id="publish" type="radio" name="types">
+                        <label for="publish" class="radio__label">
+                            Опубликовать сайт
+                        </label>
+                        <span class="form__hint">
+                            Доступно при оплаченном тарифном плане<br>и купленном домене
+                        </span>
+                    </div>
+                    <div class="form__group radio">
+                        <input id="secure" type="radio" name="types">
+                        <label for="secure" class="radio__label">
+                            Сайт защищен паролем
+                        </label>
+                        <span class="form__hint">
+                            Сайт увидит только тот, у кого есть пароль
+                        </span>
+                        <div class="form__group form__group--hidden">
+                            <label class="form__label">
+                                Введите пароль
+                            </label>
+                            <input type="password" class="input">
+                        </div>
+                    </div>
+                    <div class="form__group radio">
+                        <input id="private" type="radio" name="types">
+                        <label for="private" class="radio__label">
+                            Приватный сайт
+                        </label>
+                        <span class="form__hint">
+                            Только авторы и владелец сайта смогут увидеть сайт
+                        </span>
+                    </div>
+                    <div class="form__buttons">
+                        <button class="button button--secondary" type="reset">
+                            Отменить
+                        </button>
+                        <button class="button button--primary">
+                            Сохранить
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</section>
+<div class="alert">
+    Настройки доступа к сайту успешно изменены
+    <button class="icon__close"></button>
+</div>
+<script src="script.js"></script>
 </body>
 </html>

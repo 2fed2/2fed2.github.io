@@ -1,0 +1,10 @@
+.logo{
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+  color: $mainTextColor;
+  text-decoration: none;
+  @media screen and (max-width: $smScreen) {
+    font-size: 15px;
+  }
+}

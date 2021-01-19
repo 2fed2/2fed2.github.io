@@ -1,0 +1,21 @@
+.breadcrumbs{
+  @include resetUl;
+  display: flex;
+  &__item{
+    margin-right: 4px;
+    &:after{
+      content: '/';
+    }
+    &:last-child{
+      margin-right: 0;
+      &:after{
+        display: none;
+      }
+    }
+  }
+  &__link{
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.3;
+  }
+}

@@ -1,0 +1,23 @@
+.button{
+  box-shadow: none;
+  padding: 11px 16px;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 700;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: $mainTransiton;
+  &:hover{
+    opacity: 0.5;
+  }
+  &--secondary{
+    border: $mainBorder;
+    color: $mainTextColor;
+  }
+  &--primary{
+    border: $accentBorder;
+    color: $accentTextColorBtn;
+    background-color: $btnBgAccentColor;
+  }
+}

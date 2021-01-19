@@ -1,0 +1,67 @@
+.nav {
+  &__list{
+    @include resetUl;
+    margin: 0 -12px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: $mainTransiton;
+    @media screen and (max-width: $mdScreen) {
+      position: fixed;
+      width: 100%;
+      margin: 0;
+      max-width: 360px;
+      height: calc(100vh - 60px);
+      right: -360px;
+      top: 60px;
+      background-color: $mainBgColor;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 0 32px;
+      &:before{
+        content: '';
+        position: absolute;
+        top: -2px;
+        height: 2px;
+        left: 0;
+        width: 100%;
+        background-color: $mainBgColor;
+      }
+      .nav--open &{
+        right: 0;
+        z-index: 9999;
+        &:after{
+          content: '';
+          position: absolute;
+          left: -2px;
+          width: 2px;
+          top: 0;
+          height: 100%;
+          background-color: $mainBorderColor;
+        }
+      }
+    }
+  }
+  &__item{
+    margin: 0 12px;
+    &--help{
+      margin-left: 60px;
+    }
+    @media screen and (max-width: $mdScreen) {
+      padding: 0 16px;
+      margin: 24px 0 0;
+      width: 100%;
+    }
+    &--user{
+      @media screen and (max-width: $mdScreen) {
+        margin-top: auto;
+      }
+    }
+    & > a {
+      line-height: 1.3;
+      @media screen and (max-width: $mdScreen) {
+        font-size: 24px;
+      }
+    }
+  }
+}

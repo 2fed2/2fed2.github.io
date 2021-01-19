@@ -1,0 +1,41 @@
+.radio{
+  display: flex;
+  flex-direction: column;
+  padding-left: 32px;
+    &__label{
+      line-height: 1.3;
+      font-weight: 700;
+      color: $mainTextColor;
+      cursor: pointer;
+      position: relative;
+      &:before{
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border: $radioBorder;
+        border-radius: 50%;
+        left: -32px;
+        top: 50%;
+        transform: translate(0, -50%);
+        box-sizing: border-box;
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: $accentTextColor;
+        border-radius: 50%;
+        left: -28px;
+        top: 50%;
+        transform: translate(0, -50%) scale(0);
+        transition: $mainTransiton;
+      }
+      input:checked + &{
+        &:after {
+          transform: translate(0, -50%) scale(1);
+        }
+      }
+    }
+}

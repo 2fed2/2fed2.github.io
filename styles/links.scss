@@ -1,0 +1,25 @@
+.links{
+  display: flex;
+  flex-direction: column;
+  &__item{
+    line-height: 1.3;
+    position: relative;
+    margin-bottom: 24px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &:focus{
+      color: $accentTextColor;
+      &:before{
+        content: '';
+        width: 2px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        left: -20px;
+        background-color: $accentTextColor;
+      }
+    }
+  }
+}

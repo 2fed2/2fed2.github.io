@@ -1,0 +1,86 @@
+.icon{
+  &__close{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 16px;
+    &:after, &:before{
+      content: '';
+      @include closeLine;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:before{
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+  &__burger {
+    display: none;
+    @media screen and (max-width: $mdScreen) {
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: relative;
+
+      span {
+        @include burgerLine;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: $mainTransiton;
+        .nav--open &{
+          opacity: 0;
+        }
+      }
+      &:after, &:before{
+        content: '';
+        transition: $mainTransiton;
+        @include burgerLine;
+      }
+      &:before{
+        top: 3px;
+        .nav--open &{
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+      }
+      &:after{
+        bottom: 3px;
+        .nav--open &{
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+    }
+  }
+  &__back{
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background: $mainBgColor;
+    border: $mainBorder;
+    border-radius: 50%;
+    margin-right: 12px;
+    position: relative;
+    transform: rotate(135deg);
+    &:before{
+      content: '';
+      top: 50%;
+      left: 50%;
+      transform: translate(calc(-50% - 1.5px), calc(-50% + 3px));
+      @include arrowLine;
+    }
+    &:after{
+      content: '';
+      top: 50%;
+      left: 50%;
+      transform: translate(calc(-50% + 3px), calc(-50% - 1.5px)) rotate(90deg);
+      @include arrowLine;
+    }
+  }
+}
